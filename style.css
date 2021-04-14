@@ -1,0 +1,123 @@
+
+.frame {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #aaa;
+}
+
+.container{
+  height: 400px;
+}
+.header {
+  padding: 40px 10px;
+  text-align: center;
+  background: #eee;
+  margin-bottom: 10px;
+}
+
+.logo{
+  font-size: 2em;
+  font-weight: bold;
+  display: inline-block;
+  padding 0 8px;
+}
+
+p{
+  font-size: 20px;
+  text-align: center;
+}
+
+button{
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  border-top: 1px solid #aaa;
+}
+
+.page{
+  overflow: hidden;
+  height: 92%;
+  padding: 15px 20px;
+}
+
+.p3div{
+  text-align: center;
+  height: 100%;
+}
+
+.p2_right{
+  width: 40%;
+  height: 100%;
+  float: right;
+  text-align: center;
+
+}
+
+.p2_left{
+  width: 55%;
+  height: 100%;
+  float: left;
+}
+
+.p4_l{
+  width: 30%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  padding-left: 20px;
+}
+
+.p4_r{
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+.ssm{
+  padding-top: 2em;
+  padding-right: 20px;
+}
+
+table{
+  text-align: center;
+}
+
+tr{
+  text-align: center;
+}
+
+td{
+  border: 1px solid black;
+  height: 82px;
+  width: 82px;
+  margin: 3px;
+}
+
+
+
+.talkbox{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.p2_left div{
+  margin: 10px;
+}
+
+img{
+  height: 100%;
+  width: auto;
+  pointer-events: none;
+}
+
+.spec{
+  font-size: 16px;
+}
+
+div{
+  font-size: 20px;
+}
+
