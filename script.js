@@ -1,5 +1,13 @@
 var body = document.body;
 
+function makeSVGElement(tag, attrs){
+  var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for(var k in attrs){
+    el.setAttribute(k, attrs[k]);
+  }
+  return el;
+}
+
 
 var logo = document.getElementById("logo");
 var con = document.getElementById("con");
@@ -12,6 +20,9 @@ var page4 = document.createElement("div");
 page4.className = "page";
 var page5 = document.createElement("div");
 page5.className = "page";
+
+var svgrect = document.getElementById("svgrect");
+page1.removeChild(svgrect);
 
 
 var p2_left = document.createElement("div");
@@ -28,6 +39,11 @@ cls.className = "namebox";
 cls.textContent = "클래스 : 게임기획자";
 p2_left.appendChild(cls);
 
+var lv = document.createElement("div");
+lv.className = "namebox";
+lv.textContent = "lv : 28";
+p2_left.appendChild(lv);
+
 var spec = document.createElement("div");
 spec.className = "spec";
 spec.innerHTML = '<br/>수 많은 개발자 지망생이 모이는 인하대 산학협력원, 그는 컴퓨터 공학을 전공했으며, 최근까지 임용고시를 준비하던 고시원의 좀비였습니다. <br/>그러나 어느날 각성한 그는 게임 개발자가 되겠다는 내면의 외침을 따라 큰 뜻을 품고 여행길에 올랐고, 이곳 산학협력원에서 당신을 만나게 되었습니다.';
@@ -42,17 +58,107 @@ p2_left.appendChild(talkbox);
 var p2_right = document.createElement("div");
 p2_right.className = "p2_right";
 page2.appendChild(p2_right);
-const img1 = new Image();
-img1.src = 'images/pic.jpg';
-p2_right.appendChild(img1);
+
+var hover_text_1 = document.createElement("div");
+hover_text_1.className = "hover_text_1";
+hover_text_1.innerText = "2018평창 올림픽 \n성화봉송 달리기";
+p2_right.appendChild(hover_text_1);
+
 
 var p3div = document.createElement("div");
 p3div.className = 'p3div';
 page3.appendChild(p3div);
+p3div.appendChild(svgrect);
 
-const img2 = new Image();
-img2.src = 'images/stat.png';
-p3div.appendChild(img2);
+var penta_10 = makeSVGElement('polygon',
+  {points: "200,0 400,152 328,400 72,400 0,152",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_10);
+var penta_9 = makeSVGElement('polygon',
+  {points: "200,20 380,156.8 315.2,380 84.8,380 20,156.8",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_9);
+var penta_8 = makeSVGElement('polygon',
+  {points: "200,40 360,161.6 302.4,360 97.6,360 40,161.6",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_8);
+var penta_7 = makeSVGElement('polygon',
+  {points: "200,60 340,166.4 289.6,340 110.4,340 60,166.4",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_7);
+var penta_6 = makeSVGElement('polygon',
+  {points: "200,80 320,171.2 276.8,320 123.2,320 80,171.2",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_6);
+var penta_5 = makeSVGElement('polygon',
+  {points: "200,100 300,176 264,300 136,300 100,176",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_5);
+var penta_4 = makeSVGElement('polygon',
+  {points: "200,120 280,180.8 251.2,280 148.8,280 120,180.8",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_4);
+var penta_3 = makeSVGElement('polygon',
+  {points: "200,140 260,185.6 238.4,260 161.6,260 140,185.6",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_3);
+var penta_2 = makeSVGElement('polygon',
+  {points: "200,160 240,190.4 225.6,240 174.4,240 160,190.4",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_2);
+var penta_1 = makeSVGElement('polygon',
+  {points: "200,180 220,195.2 212.8,220 187.2,220 180,195.2",
+  'fill-opacity': "0.0",
+  stroke: 'red'});
+svgrect.appendChild(penta_1);
+
+var pentaline_1 = makeSVGElement('line',
+{x1: "200", y1: "0",
+  x2: "200", y2: "200",
+  'stroke-width': 2,
+  stroke: 'blue'});
+svgrect.appendChild(pentaline_1);
+var pentaline_2 = makeSVGElement('line',
+  {x1: "400", y1: "152",
+  x2: "200", y2: "200",
+  'stroke-width': 2,
+  stroke: 'blue'});
+svgrect.appendChild(pentaline_2);
+var pentaline_3 = makeSVGElement('line',
+  {x1: "328", y1: "400",
+  x2: "200", y2: "200",
+  'stroke-width': 2,
+  stroke: 'blue'});
+svgrect.appendChild(pentaline_3);
+var pentaline_4 = makeSVGElement('line',
+  {x1: "72", y1: "400",
+  x2: "200", y2: "200",
+  'stroke-width': 2,
+  stroke: 'blue'});
+svgrect.appendChild(pentaline_4);
+var pentaline_5 = makeSVGElement('line',
+  {x1: "0", y1: "152",
+  x2: "200", y2: "200",
+  'stroke-width': 2,
+  stroke: 'blue'});
+svgrect.appendChild(pentaline_5);
+
+var penta_0 = makeSVGElement('polygon',
+  {points: "200,200 200,200 200,200 200,200 200,200",
+  fill: 'green',
+  'fill-opacity': "0.5",
+  stroke: 'green',
+  'stroke-width': 2});
+svgrect.appendChild(penta_0);
 
 
 var p4_left = document.createElement("div");
@@ -100,51 +206,28 @@ for(i=0; i<4; ++i){
   for(j=0; j<2; ++j){
     var SPACE = document.createElement("td");
     SPACE.addEventListener('click', skill);
+    SPACE.style.backgroundRepeat = "no-repeat";
     spaces[i].push(SPACE);
     LINE.append(SPACE);
   }
   skilltable.appendChild(LINE);
 }
 
-const icon1 = new Image();
-icon1.src = 'images/retro.png';
-spaces[0][0].appendChild(icon1);
-
-const icon2 = new Image();
-icon2.src = 'images/usemap.jpg';
-spaces[0][1].appendChild(icon2);
-
-const icon3 = new Image();
-icon3.src = 'images/teeth.png';
-spaces[1][0].appendChild(icon3);
-
-const icon4 = new Image();
-icon4.src = 'images/fire.jpg';
-spaces[1][1].appendChild(icon4);
-
-const icon5 = new Image();
-icon5.src = 'images/book.png';
-spaces[2][0].appendChild(icon5);
-
-const icon6 = new Image();
-icon6.src = 'images/versus.jpg';
-spaces[2][1].appendChild(icon6);
-
-const icon7 = new Image();
-icon7.src = 'images/born.png';
-spaces[3][0].appendChild(icon7);
-
-const icon8 = new Image();
-icon8.src = 'images/images.jpg';
-spaces[3][1].appendChild(icon8);
-
+spaces[0][0].style.backgroundImage = "url('images/retro.png')";
+spaces[0][1].style.backgroundImage = "url('images/usemap.jpg')";
+spaces[1][0].style.backgroundImage = "url('images/teeth.png')";
+spaces[1][1].style.backgroundImage = "url('images/fire.jpg')";
+spaces[2][0].style.backgroundImage = "url('images/book.png')";
+spaces[2][1].style.backgroundImage = "url('images/versus.jpg')";
+spaces[3][0].style.backgroundImage = "url('images/born.png')";
+spaces[3][1].style.backgroundImage = "url('images/images.jpg')";
 
 p4_left.appendChild(skilltable);
-
 
 var p4_right = document.createElement("div");
 p4_right.className = "p4_r";
 page4.appendChild(p4_right);
+
 var ssm = document.createElement("div");
 ssm.className = "ssm";
 p4_right.appendChild(ssm);
@@ -158,10 +241,11 @@ page5.appendChild(p2);
 
 
 var pagenum = 1;
-var bt1 = document.getElementById("bt1");
-bt1.addEventListener('click', function(event){
+
+var next = document.getElementById("next");
+next.addEventListener('click', function(event){
   event.preventDefault();
-  if(pagenum == 1){
+  if(pagenum == 1 || pagenum == 0 || pagenum == 10){
     page1.parentNode.removeChild(page1);
     con.appendChild(page2);
     logo.innerText = "개요";
@@ -183,6 +267,49 @@ bt1.addEventListener('click', function(event){
     page4.parentNode.removeChild(page4);
     logo.innerText = "완료";
     con.appendChild(page5);
-    bt1.parentNode.removeChild(bt1);
+    pagenum = 5;
+  }
+  else if(pagenum == 5){
+    alert("끗!");
+  }
+});
+
+var prev = document.getElementById("prev");
+prev.addEventListener('click', function(event){
+  event.preventDefault();
+  if(pagenum == 1){
+    alert("게임고수 특) 시작지점에서 뒤로감");
+    pagenum = 0;
+  }
+  else if(pagenum == 2){
+    page2.parentNode.removeChild(page2);
+    con.appendChild(page1);
+    logo.innerText = "환영합니다!";
+    pagenum = 1;
+  }
+  else if(pagenum == 3){
+    page3.parentNode.removeChild(page3);
+    con.appendChild(page2);
+    logo.innerText = "개요";
+    pagenum = 2;
+  }
+  else if(pagenum == 4){
+    page4.parentNode.removeChild(page4);
+    con.appendChild(page3);
+    logo.innerText = "능력치";
+    pagenum = 3;
+  }
+  else if(pagenum == 5){
+    page5.parentNode.removeChild(page5);
+    con.appendChild(page4);
+    logo.innerText = "";
+    pagenum = 4;
+  }
+  else if(pagenum == 0){
+    alert("뒤지다보면 업적같은거 있음ㅋㅋㅋ");
+    pagenum = 10;
+  }
+  else if(pagenum == 10){
+    alert("이제 없으니까 그만 누르세요");
   }
 });

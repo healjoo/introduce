@@ -1,20 +1,19 @@
-
 .frame {
-  width: 800px;
+  width: 1000px;
   margin: 0 auto;
-  border: 1px solid #aaa;
+  border: 1px solid #eee;
 }
 
 .container{
-  height: 400px;
-}
-.header {
-  padding: 40px 10px;
-  text-align: center;
-  background: #eee;
-  margin-bottom: 10px;
+  height: 500px;
+  padding: 20px;
 }
 
+.header {
+  padding: 20px 10px;
+  text-align: center;
+  background: #eee;
+}
 .logo{
   font-size: 2em;
   font-weight: bold;
@@ -22,29 +21,54 @@
   padding 0 8px;
 }
 
+.page{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  border-top: 1px solid #eee;
+  padding: 0px 10px;
+}
+.prev_div{
+  float: left;
+}
+.next_div{
+  float: right;
+}
+
 p{
   font-size: 20px;
   text-align: center;
 }
 
-button{
-  text-align: center;
+.p2_left{
+  width: 59%;
+  height: 99%;
+  float: left;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;;
+  position: relative;
 }
 
-.footer {
-  text-align: center;
-  border-top: 1px solid #aaa;
+.namebox{
+  font-size: 18px;
+  font-weight: bold;
 }
-
-.page{
-  overflow: hidden;
-  height: 92%;
-  padding: 15px 20px;
+.spec{
+  font-size: 18px;
 }
-
-.p3div{
+.talkbox{
+  font-size: 20px;
+  font-weight: bold;
   text-align: center;
-  height: 100%;
+  position: absolute;
+  bottom: 2em;
+  width: 100%;
+}
+.p2_left div{
+  margin: 10px;
 }
 
 .p2_right{
@@ -52,32 +76,40 @@ button{
   height: 100%;
   float: right;
   text-align: center;
-
+  background: url('images/pic.jpg');
+  background-size: cover;
 }
 
-.p2_left{
-  width: 55%;
+.hover_text_1{
+  padding-top: 50%;
   height: 100%;
-  float: left;
+  background: #000000;
+  opacity: 0;
+}
+.p2_right:hover .hover_text_1{
+  opacity: 0.5;
+  text-align: center;
+  color:#ffffff;
+}
+
+.p3div{
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+svg{
+  height: 400px;
+  width: 400px;
+  border: 1px solid #eee;
 }
 
 .p4_l{
-  width: 30%;
+  width: 40%;
   height: 100%;
   float: left;
   text-align: center;
   padding-left: 20px;
-}
-
-.p4_r{
-  width: 50%;
-  height: 100%;
-  float: right;
-}
-
-.ssm{
-  padding-top: 2em;
-  padding-right: 20px;
 }
 
 table{
@@ -93,31 +125,47 @@ td{
   height: 82px;
   width: 82px;
   margin: 3px;
+  background-size: cover;
 }
 
-
-
-.talkbox{
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.p2_left div{
-  margin: 10px;
-}
-
-img{
+.p4_r{
+  width: 50%;
   height: 100%;
-  width: auto;
-  pointer-events: none;
+  float: right;
 }
 
-.spec{
-  font-size: 16px;
+.ssm{
+  padding-top: 2em;
+  padding-right: 20px;
 }
 
-div{
-  font-size: 20px;
+a{
+  text-decoration: none;
+  font-style: italic;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
