@@ -23,6 +23,8 @@ page5.className = "page";
 
 var svgrect = document.getElementById("svgrect");
 page1.removeChild(svgrect);
+var chartdom = document.getElementById("chartdom");
+page1.removeChild(chartdom);
 
 
 var p2_left = document.createElement("div");
@@ -67,9 +69,12 @@ p2_right.appendChild(hover_text_1);
 
 var p3div = document.createElement("div");
 p3div.className = 'p3div';
-page3.appendChild(p3div);
-p3div.appendChild(svgrect);
 
+page3.appendChild(chartdom);
+page3.appendChild(p3div);
+
+/*
+p3div.appendChild(svgrect);
 var penta_10 = makeSVGElement('polygon',
   {points: "200,0 400,152 328,400 72,400 0,152",
   'fill-opacity': "0.0",
@@ -159,6 +164,259 @@ var penta_0 = makeSVGElement('polygon',
   stroke: 'green',
   'stroke-width': 2});
 svgrect.appendChild(penta_0);
+*/
+var myChart = echarts.init(chartdom);
+var array = [0,0,0,0,0];
+var chart_option = {
+  tooltip: {},
+  radar:{
+    name:{
+      textstyle: {
+        color: '#000',
+        borderRadius: 3,
+      }
+    },
+    indicator: [
+      {name: '지식', max: 10},
+      {name: '집착', max: 10},
+      {name: '피지컬', max: 10},
+      {name: '자신감', max: 10},
+      {name: '잔재주', max: 10},
+    ],
+    splitNumber: 10,
+    splitArea:{
+      areaStyle:{
+        color: ['rgba(255,255,255,0)']
+      }
+    },
+  },
+  series: [{
+    type: 'radar',
+    itemStyle: {
+      color: '#f9713c'
+    },
+    areaStyle: {
+      opacity: 0.3
+    },
+    data: [
+      { value: [array[0], array[1], array[2], array[3], array[4]]}
+    ]
+  }]
+};
+
+chart_option && myChart.setOption(chart_option);
+
+var ary = chart_option.series[0].data[0].value;
+
+var graph = function(event){
+  event.preventDefault();
+}
+
+var statpoint = document.createElement("div");
+statpoint.className = "point";
+p3div.appendChild(statpoint);
+
+var st = 28;
+var statpoint_text = document.createElement("div");
+statpoint_text.innerText = "남은 포인트 : "+st;
+statpoint.appendChild(statpoint_text);
+var ggstat = document.createElement("div");
+ggstat.className = "ggstat";
+ggstat.textContent = "권장 지식:7 집착:4 피지컬:2 자신감:9 잔재주:6"
+statpoint.appendChild(ggstat);
+
+
+var wis = document.createElement("div");
+wis.className = "stat";
+p3div.appendChild(wis);
+
+var wis_text = document.createElement('span');
+wis_text.innerHTML = "지식&nbsp;&nbsp;&nbsp; : "+ary[0];
+var wis_bt1 = document.createElement("button");
+wis_bt1.textContent = "-";
+var wis_bt2 = document.createElement("button");
+wis_bt2.textContent = "+";
+
+wis_bt1.addEventListener('click', function(e){
+  e.preventDefault();
+  if(ary[0] != 0){
+    st++;
+    ary[0]--;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    wis_text.innerHTML = "지식&nbsp;&nbsp;&nbsp; : "+ary[0];
+  }
+});
+
+wis_bt2.addEventListener('click', function(e){
+  e.preventDefault();
+  if(st != 0 && ary[0] != 10){
+    st--;
+    ary[0]++;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    wis_text.innerHTML = "지식&nbsp;&nbsp;&nbsp; : "+ary[0];
+  }
+});
+
+wis.appendChild(wis_text);
+wis.appendChild(wis_bt1);
+wis.appendChild(wis_bt2);
+
+
+var win = document.createElement("div");
+win.className = "stat";
+p3div.appendChild(win);
+
+var win_text = document.createElement('span');
+win_text.innerHTML = "집착&nbsp;&nbsp;&nbsp; : "+ary[1];
+var win_bt1 = document.createElement("button");
+win_bt1.textContent = "-";
+var win_bt2 = document.createElement("button");
+win_bt2.textContent = "+";
+
+win_bt1.addEventListener('click', function(e){
+  e.preventDefault();
+  if(ary[1] != 0){
+    st++;
+    ary[1]--;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    win_text.innerHTML = "집착&nbsp;&nbsp;&nbsp; : "+ary[1];
+  }
+});
+
+win_bt2.addEventListener('click', function(e){
+  e.preventDefault();
+  if(st != 0 && ary[1] != 10){
+    st--;
+    ary[1]++;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    win_text.innerHTML = "집착&nbsp;&nbsp;&nbsp; : "+ary[1];
+  }
+});
+
+win.appendChild(win_text);
+win.appendChild(win_bt1);
+win.appendChild(win_bt2);
+
+
+var pys = document.createElement("div");
+pys.className = "stat";
+p3div.appendChild(pys);
+
+var pys_text = document.createElement('span');
+pys_text.innerText = "피지컬 : "+ary[2];
+var pys_bt1 = document.createElement("button");
+pys_bt1.textContent = "-";
+var pys_bt2 = document.createElement("button");
+pys_bt2.textContent = "+";
+
+pys_bt1.addEventListener('click', function(e){
+  e.preventDefault();
+  if(ary[2] != 0){
+    st++;
+    ary[2]--;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    pys_text.innerText = "피지컬 : "+ary[2];
+  }
+});
+
+pys_bt2.addEventListener('click', function(e){
+  e.preventDefault();
+  if(st != 0 && ary[2] != 10){
+    st--;
+    ary[2]++;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    pys_text.innerText = "피지컬 : "+ary[2];
+  }
+});
+
+pys.appendChild(pys_text);
+pys.appendChild(pys_bt1);
+pys.appendChild(pys_bt2);
+
+
+var jsg = document.createElement("div");
+jsg.className = "stat";
+p3div.appendChild(jsg);
+
+var jsg_text = document.createElement('span');
+jsg_text.innerText = "자신감 : "+ary[3];
+var jsg_bt1 = document.createElement("button");
+jsg_bt1.textContent = "-";
+var jsg_bt2 = document.createElement("button");
+jsg_bt2.textContent = "+";
+
+jsg_bt1.addEventListener('click', function(e){
+  e.preventDefault();
+  if(ary[3] != 0){
+    st++;
+    ary[3]--;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    jsg_text.innerText = "자신감 : "+ary[3];
+  }
+});
+
+jsg_bt2.addEventListener('click', function(e){
+  e.preventDefault();
+  if(st != 0 && ary[3] != 10){
+    st--;
+    ary[3]++;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    jsg_text.innerText = "자신감 : "+ary[3];
+  }
+});
+
+jsg.appendChild(jsg_text);
+jsg.appendChild(jsg_bt1);
+jsg.appendChild(jsg_bt2);
+
+var jjj = document.createElement("div");
+jjj.className = "stat";
+p3div.appendChild(jjj);
+
+var jjj_text = document.createElement('span');
+jjj_text.innerText = "잔재주 : "+ary[4];
+var jjj_bt1 = document.createElement("button");
+jjj_bt1.textContent = "-";
+var jjj_bt2 = document.createElement("button");
+jjj_bt2.textContent = "+";
+
+jjj_bt1.addEventListener('click', function(e){
+  e.preventDefault();
+  if(ary[4] != 0){
+    st++;
+    ary[4]--;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    jjj_text.innerText = "잔재주 : "+ary[4];
+  }
+});
+
+jjj_bt2.addEventListener('click', function(e){
+  e.preventDefault();
+  if(st != 0 && ary[4] != 10){
+    st--;
+    ary[4]++;
+    myChart.setOption(chart_option);
+    statpoint_text.innerText = "남은 포인트 : "+st;
+    jjj_text.innerText = "잔재주 : "+ary[4];
+  }
+});
+
+jjj.appendChild(jjj_text);
+jjj.appendChild(jjj_bt1);
+jjj.appendChild(jjj_bt2);
+
+
+
+
 
 
 var p4_left = document.createElement("div");
@@ -302,7 +560,7 @@ prev.addEventListener('click', function(event){
   else if(pagenum == 5){
     page5.parentNode.removeChild(page5);
     con.appendChild(page4);
-    logo.innerText = "";
+    logo.innerText = "스킬 및 특성";
     pagenum = 4;
   }
   else if(pagenum == 0){
