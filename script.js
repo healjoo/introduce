@@ -428,28 +428,36 @@ var skill = function(e){
   var space = spaces[line].indexOf(e.target);
   
   if(line == 0 && space == 0){
-    ssm.innerText = "고전게임 전문화 \n \n유년기시절 페미컴 해적판 팩을 위시로한 다채로운 고전게임 경험을 가지고 있습니다.";
+    ssm_title.innerText = "겜잘알";
+    ssm.innerText = "유년기시절 페미컴 플레이부터 시작된 다채로운 게임경험과 그 경험에서 따라오는 게임시스템에 대한 깊은 이해도를 가지고 있습니다.\n컨텐츠에대한 날카로운 통찰력이 수반됩니다.\n\n새로운 게임을 플레이 할 때, 최소능력치가 보정됩니다.";
   }
   else if(line == 0 && space == 1){
-    ssm.innerText = "유즈맵 마스터리  \n\n스타크래프트에서 워3까지 학창시절에 이어지는 풍부한 유즈맵 경험을 가지고 있습니다. 특히 전성기설의 그는 블러드류 공방의 지배자였습니다.";
+    ssm_title.innerText = "유즈맵 마스터리";
+    ssm.innerText = "스타크래프트에서 워3까지 이어지는 풍부한 유즈맵 경험을 가지고 있습니다. 특히 전성기설의 그는 블러드류 공방의 지배자였습니다.\n다양한 형태의 게임을 즐깁니다. ";
   }
   else if(line == 1 && space == 0){
-    ssm.innerText = "-틀-\n  \n게임포럼에서 어릴적 즐겼던 게임 이야기를 꺼내면 '그게뭔데 틀딱아'댓글이 항상 따라다닙니다.";
+    ssm_title.innerText = "-틀-"
+    ssm.innerText = "게임포럼에서 어릴적 즐겼던 게임 이야기를 꺼내면 '그게뭔데 틀딱아'댓글이 항상 따라다닙니다.\n요오,,,즘 급식들은 예의가,,! 읎서,,,!\n\n추억팔이 시 회복효과가 상승합니다.";
   }
   else if(line == 1 && space == 1){
-    ssm.innerText = "뜨거운효자  \n\n그의 부모님은 그가 게임계에 뛰어드는 것을 싫어합니다.\n하지만 게임이 재밌고 즐거운걸 어쩌겠어요.";
+    ssm_title.innerText = "경쟁심리";
+    ssm.innerText = "승부요소가 있다면 승리를 쟁취해야만 직성이 풀립니다.\n게임을 하면 이겨야죠. \n\npvp컨텐츠에서 적극성이 상승합니다. 적극성'만' 상승합니다...";
   }
   else if(line == 2 && space == 0){
-    ssm.innerText = "경험주의  \n\n이름있거나, 유명하고, 이슈를 몰고오는 게임은 웬만하면 일단 해봅니다.\n잘나가는 게임은 잘 나가는 이유가 있다는것이 그의 지론중 하나이지요.";
+    ssm_title.innerText = "경험주의";
+    ssm.innerText = "이름있거나, 유명하고, 이슈를 몰고오는 게임은 웬만하면 일단 해봅니다.\n잘나가는 게임은 잘 나가는 이유가 있다는것이 그의 지론중 하나이지요.\n\n지식이 넓어집니다.";
   }
   else if(line == 2 && space == 1){
-    ssm.innerText = "다대일 전문화 \n \n교원과정, 교생실습에서의 경험이 다수와의 대치상황에서 그를 강하게 만듭니다.";
+    ssm_title.innerText = "다대일 전문화";
+    ssm.innerText = "교원과정, 교생실습에서의 경험이 다수와의 대치상황에서 그를 강하게 만듭니다.\n\n토론, 발표 등등 여러사람 앞에 서게되었을 때 디버프 효과가 감소합니다. ";
   }
   else if(line == 3 && space == 0){
-    ssm.innerText = "반골기질  \n\n괜스레 반대의견을 던집니다. 본인은 고칠생각이 없는듯 합니다.";
+    ssm_title.innerText = "반골기질";
+    ssm.innerText = "괜스레 반대의견을 던집니다. 본인은 고칠생각이 없는듯 합니다.\n\n이따금 생각지도 못한 문제를 찾아냅니다.";
   }
   else if(line == 3 && space == 1){
-    ssm.innerText = "똥믈리에  \n\n트릭스터, 마비노기 영웅전, 킹스레이드 등 그가 3년 이상 각잡고 꾸준히 했던 온라인 게임들은 모두 아프거나 서비스를 종료했습니다.\n불쌍한 사람... 가여운 사람이에요, 이 사람";
+    ssm_title.innerText = "똥믈리에";
+    ssm.innerText = "트릭스터, 마비노기 영웅전, 킹스레이드 등 그가 3년 이상 각잡고 꾸준히 했던 온라인 게임들은 모두 아프거나 서비스를 종료했습니다.\n불쌍한 사람... 가여운 사람이에요.";
   }
   
 }
@@ -486,6 +494,10 @@ var p4_right = document.createElement("div");
 p4_right.className = "p4_r";
 page4.appendChild(p4_right);
 
+
+var ssm_title = document.createElement("div");
+ssm_title.className = "ssm_title";
+p4_right.appendChild(ssm_title);
 var ssm = document.createElement("div");
 ssm.className = "ssm";
 p4_right.appendChild(ssm);
